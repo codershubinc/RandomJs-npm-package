@@ -1,0 +1,27 @@
+{
+  "name": "randomjs-npm-package",
+  "version": "1.0.0",
+  "description": "random users",
+  "keywords": [
+    "random",
+    "users"
+  ],
+  "homepage": "https://github.com/codershubinc/RandomJs-npm-package#readme",
+  "bugs": {
+    "url": "https://github.com/codershubinc/RandomJs-npm-package/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codershubinc/RandomJs-npm-package.git"
+  },
+  "license": "ISC",
+  "author": "Swapnil Ingle",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "dev"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
