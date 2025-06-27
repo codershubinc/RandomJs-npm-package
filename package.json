@@ -1,6 +1,6 @@
 {
   "name": "randomjs-npm-package",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "random users",
   "keywords": [
     "random",
@@ -17,7 +17,7 @@
   "license": "ISC",
   "author": "Swapnil Ingle",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "dev"
   },
