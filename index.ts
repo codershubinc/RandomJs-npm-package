@@ -14,10 +14,13 @@
  *   success: true
  * }
  */
-const getRandomUser = async () => {
-    const ftc = await fetch("https://openapi.codershubinc.tech/v1.0/user")
-    const data = await ftc.json()
-    return data
-}
+
+import type { RandomUserResponse } from "./index.d";
+
+const getRandomUser = async (): Promise<RandomUserResponse> => {
+    const ftc = await fetch("https://openapi.codershubinc.tech/v1.0/user");
+    const data: RandomUserResponse = await ftc.json();
+    return data;
+};
 
 export default getRandomUser
