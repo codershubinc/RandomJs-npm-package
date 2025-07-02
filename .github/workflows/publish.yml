@@ -20,10 +20,18 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Change package name for npm publish
+        run: |
+          node -e "const fs = require('fs'); const pkg = JSON.parse(fs.readFileSync('package.json')); pkg.name = 'randomjs-npm'; fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2));"
+
       - name: Publish to npm
         run: npm publish --access public --registry=https://registry.npmjs.org/
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Restore package name for GitHub Packages
+        run: |
+          git checkout -- package.json
 
       - name: Set up Node.js for GitHub Packages
         uses: actions/setup-node@v4
