@@ -1,11 +1,24 @@
 /**
- * Returns a random integer between min and max (inclusive).
- * @param min - The minimum integer value (default: 0)
- * @param max - The maximum integer value (default: 100)
- * @returns A random integer between min and max
+ * Fetches a random user from the CodersHub API.
+ * @returns A promise that resolves to a RandomUserResponse object containing user and address info.
+ *
+ * Example response:
+ * {
+ *   statusCode: 200,
+ *   data: {
+ *     user: { ... },
+ *     address: { ... },
+ *     document_id: "..."
+ *   },
+ *   message: "Successfully fetched user info",
+ *   success: true
+ * }
  */
-export function getRandomNumber(min?: number, max?: number): number {
-    return Math.floor(Math.random() * ((max ?? 100) - (min ?? 0) + 1)) + (min ?? 0);
+const getRandomUser = async () => {
+    const ftc = await fetch("https://openapi.codershubinc.tech/v1.0/user")
+    const data = await ftc.json()
+    return console.log(data);
+
 }
 
-export default getRandomNumber
+export default getRandomUser
