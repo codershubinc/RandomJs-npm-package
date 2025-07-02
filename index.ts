@@ -17,8 +17,7 @@
 const getRandomUser = async () => {
     const ftc = await fetch("https://openapi.codershubinc.tech/v1.0/user")
     const data = await ftc.json()
-    return console.log(data);
-
+    return data
 }
 
 export default getRandomUser
